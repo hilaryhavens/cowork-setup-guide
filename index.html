@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Cowork Setup Guide</title>
+<meta name="description" content="Student guide to installing Claude Cowork, keeping it sandboxed to a course folder, connecting GitHub, and publishing a first website.">
+<style>
+:root{--ink:#1f1f1f;--muted:#595959;--accent:#a34e00;--rule:#e2ddd5;--code-bg:#f4f1ec;--bg:#fffdf9;--panel:#ffffff}
+@media (prefers-color-scheme:dark){:root{--ink:#ece9e4;--muted:#b0aaa2;--accent:#ff9b3d;--rule:#3a3632;--code-bg:#26231f;--bg:#181614;--panel:#1f1c19}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Georgia,"Times New Roman",serif}
+main{max-width:820px;margin:0 auto;padding:40px 16px 80px}
+h1{font-size:2.1rem;line-height:1.2;margin:0 0 .3rem}
+h2{font-size:1.45rem;margin:2.6rem 0 .6rem;padding-top:.4rem;border-top:3px solid var(--accent)}
+h3{font-size:1.15rem;margin:1.8rem 0 .4rem}
+.byline{color:var(--muted);margin-top:0}
+a{color:var(--accent)}
+code{font:0.88em/1.4 Consolas,Menlo,monospace;background:var(--code-bg);padding:.1em .3em;border-radius:4px;overflow-wrap:anywhere}
+pre{background:var(--code-bg);padding:12px 14px;border-radius:6px;white-space:pre-wrap;border-left:4px solid var(--accent)}
+pre code{background:none;padding:0;font-size:.9rem;overflow-wrap:anywhere}
+.table-wrap{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+caption{text-align:left;font-weight:bold;padding-bottom:.4rem}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:var(--panel);padding:8px 12px;z-index:10}
+th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--code-bg)}
+figure{margin:.9rem 0 1.2rem}
+figure img{max-width:100%;height:auto;border-radius:6px;display:block}
+figcaption{font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.35rem}
+ul.checklist{list-style:none;padding-left:0}
+ul.checklist li::before{content:"\2610  ";font-size:1.1em}
+li{margin:.3rem 0}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<main id="content">
+<h1>Student Guide: Installing Claude Cowork and Connecting GitHub</h1>
+<p class="byline">November 9, 2026 · <strong>Written by Claude and Hilary Havens</strong></p>
+<p>This guide shows you how to install Claude Cowork on a Mac, Windows, or Linux computer, use it from a Chromebook, keep its work safely contained, and connect it to GitHub. Cowork is the part of the Claude app that carries out multi-step tasks for you, such as reading a folder of files, writing new ones, and organizing them, instead of only answering questions. Unlike Claude Code, it needs no Terminal commands (except a one-time install on Linux): you install one app, sign in, and type your request. If all goes well, setup takes about 15 minutes.</p>
+<p>The screenshots come from real screens checked on November 9, 2026, with personal details removed. Pictures marked <strong>Illustration</strong> are drawings of screens we couldn't capture (mostly Mac and Linux); the buttons they show match the real ones. If your screen looks a little different, the app has probably been updated: look for the same button names.</p>
+
+<h2>Before you start</h2>
+<p>Cowork only works on a paid Claude plan. For this course, you must use your own Claude Pro account ($20 a month). The free plan does not include Cowork. You also need a free GitHub account (<a href="https://github.com/signup">sign up for GitHub</a>) for the GitHub steps.</p>
+<p>Cowork now runs your tasks on Anthropic's computers, not yours, so even an older laptop can use it. The Claude Desktop app is still what lets Cowork reach the files in a folder on your computer.</p>
+<div class="table-wrap"><table>
+<caption>Which systems can run Claude Desktop and Cowork</caption>
+<tr><th scope="col">System</th><th scope="col">Claude Desktop app</th><th scope="col">Cowork</th></tr>
+<tr><td>macOS 13 (Ventura) or newer</td><td>Yes</td><td>Yes, with your local folders</td></tr>
+<tr><td>Windows 10 or newer</td><td>Yes (x64 and ARM)</td><td>Yes, with your local folders</td></tr>
+<tr><td>Linux: Ubuntu 22.04+ or Debian 12+</td><td>Yes (beta)</td><td>Yes, with your local folders</td></tr>
+<tr><td>Chromebook</td><td>No</td><td>Yes, in the browser at claude.ai, without local folders</td></tr>
+</table></div>
+<p>Tip: close and reopen the Claude app after installing or updating it. Most "I can't find Cowork" problems are an out-of-date app.</p>
+
+<h2>Install on macOS</h2>
+<ol>
+<li>Go to the <a href="https://claude.com/download">Claude download page</a> and click <strong>Download</strong> next to macOS. One version works on both Apple silicon and Intel Macs.
+<figure><img src="images/download-card.png" alt="The Desktop card on the Claude download page, with Download buttons for macOS and Windows and See docs for Linux."></figure></li>
+<li>Open the downloaded <code>.dmg</code> file from your Downloads folder.</li>
+<li>In the window that opens, drag the <strong>Claude</strong> icon onto the <strong>Applications</strong> folder.
+<figure><img src="images/mac-dmg.png" alt="The Claude disk-image window, with an arrow from the Claude icon to the Applications folder."><figcaption>Illustration</figcaption></figure></li>
+<li>Open <strong>Applications</strong> and double-click <strong>Claude</strong>. If your Mac asks whether you're sure you want to open an app downloaded from the internet, click <strong>Open</strong>.
+<figure><img src="images/mac-open.png" alt="A macOS prompt asking if you are sure you want to open Claude, with Cancel and Open buttons."><figcaption>Illustration</figcaption></figure></li>
+<li>Click <strong>Get started</strong>. Sign in with your Claude Pro account: click <strong>Continue with Google</strong>, or type your email and click <strong>Continue with email</strong>. Claude emails you a sign-in link; open it on the same computer, or type the code it shows into the box and click <strong>Verify email address</strong>.
+<figure><img src="images/win-sign-in.png" alt="The Claude Sign In screen: Continue with Google, an email box, and Continue with email."><figcaption>The sign-in screen (shown on Windows; a Mac looks the same).</figcaption></figure></li>
+</ol>
+<p>The app updates itself. If it ever asks to restart for an update, let it.</p>
+
+<h2>Install on Windows</h2>
+<ol>
+<li>Find out which kind of processor your computer has: press the <strong>Start</strong> key, type <code>About your PC</code>, and open it. Next to <strong>System type</strong>, you'll see either "x64-based processor" (most laptops) or "ARM-based processor" (some newer Surface and Snapdragon laptops).
+<figure><img src="images/win-system-type.png" alt="Windows Settings, System, About, with System type highlighted: 64-bit operating system, x64-based processor."><figcaption>Illustration</figcaption></figure></li>
+<li>Go to the <a href="https://claude.com/download">Claude download page</a> and click the button that matches: <strong>Download for Windows</strong> (x64) or <strong>Windows (arm64)</strong>. You can also install Claude from the <a href="https://apps.microsoft.com/detail/9P6K58THS811">Claude page in the Microsoft Store</a>, which picks the right version for you.
+<figure><img src="images/download-page.png" alt="The Claude download page on Windows: Download for Windows, Windows (arm64), and Microsoft Store buttons."></figure></li>
+<li>Open the downloaded setup file and follow the prompts.</li>
+<li>Open <strong>Claude</strong> from the Start menu.
+<figure><img src="images/win-get-started.png" alt="The Claude for Windows welcome screen with a Get started button."></figure></li>
+<li>Click <strong>Get started</strong>. Sign in with your Claude Pro account: click <strong>Continue with Google</strong>, or type your email and click <strong>Continue with email</strong>. Claude emails you a sign-in link; open it on the same computer, or type the code it shows into the box and click <strong>Verify email address</strong>.</li>
+</ol>
+<p>The app updates itself. If it ever asks to restart for an update, let it.</p>
+
+<h2>Install on Linux</h2>
+<p>The Linux app is in beta and runs on Ubuntu 22.04 or newer and Debian 12 or newer. Open a terminal (<strong>Ctrl+Alt+T</strong>) and run these three commands one at a time. The first one asks for your password; nothing shows on screen as you type.</p>
+<pre><code>sudo curl -fsSLo /usr/share/keyrings/claude-desktop-archive-keyring.asc https://downloads.claude.ai/claude-desktop/key.asc</code></pre>
+<pre><code>echo "deb [signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list</code></pre>
+<pre><code>sudo apt update &amp;&amp; sudo apt install claude-desktop</code></pre>
+<figure><img src="images/linux-terminal.png" alt="An Ubuntu terminal after the three install commands, ending with Setting up claude-desktop."><figcaption>Illustration</figcaption></figure>
+<p>Then open <strong>Claude</strong> from your applications menu (or type <code>claude-desktop</code>), click <strong>Get started</strong>, and sign in. On Linux the app doesn't update itself: it updates whenever you run your system's normal updates (<code>sudo apt update &amp;&amp; sudo apt upgrade</code>).</p>
+<p>Some Linux features are missing: Claude can't control your screen (computer use), and dictation isn't available. Anthropic's install page also lists KVM virtualization, 8 GB of memory, and about 25 GB of free disk space for Cowork on Linux. If Cowork says virtualization isn't available, ask the instructor.</p>
+
+<h2>Use Cowork on a Chromebook</h2>
+<p>There is no Claude app for Chromebooks, but Cowork works in the browser:</p>
+<ol>
+<li>Open Chrome and go to <a href="https://claude.ai">claude.ai</a>. Sign in with your Claude Pro account.</li>
+<li>Under the message box, click <strong>Cowork</strong> (next to <strong>Chat</strong>), then describe your task in the box.
+<figure><img src="images/cowork-switch.png" alt="The claude.ai message box with a request typed in and the Chat and Cowork switch below it."></figure></li>
+</ol>
+<p>In the browser, Cowork can't open folders on your Chromebook. To give Claude files, click <strong>+</strong> and choose <strong>Upload or add files</strong>. When Claude is done, click a file under <strong>Outputs</strong> to open it, then click <strong>Download</strong>. Everything else in this guide works the same way, except the GitHub Desktop steps: Chromebook students upload files on github.com instead (see Connect to GitHub).</p>
+<figure><img src="images/cowork-download.png" alt="A finished Cowork task: hello.txt is open in a side panel with a Download button at the top right."></figure>
+
+<h2>First launch</h2>
+<p>Before you open Cowork, make one folder for this course and keep all your course files in it. Cowork can only see the folders you connect, so this keeps the rest of your computer out of reach.</p>
+<div class="table-wrap"><table>
+<caption>How to make a course folder on each system</caption>
+<tr><th scope="col">System</th><th scope="col">Make a course folder</th></tr>
+<tr><td>macOS</td><td>Open <strong>Finder</strong>, go to <strong>Documents</strong>, choose <strong>File &gt; New Folder</strong>, and name it <code>claude-class</code></td></tr>
+<tr><td>Windows</td><td>Open <strong>File Explorer</strong>, go to <strong>Documents</strong>, choose <strong>New &gt; Folder</strong>, and name it <code>claude-class</code></td></tr>
+<tr><td>Linux</td><td>Open your <strong>Files</strong> app, go to <strong>Documents</strong>, right-click, choose <strong>New Folder</strong>, and name it <code>claude-class</code></td></tr>
+</table></div>
+<figure><img src="images/mac-new-folder.png" alt="The Finder File menu on a Mac with New Folder highlighted."><figcaption>Illustration: macOS Finder</figcaption></figure>
+<figure><img src="images/win-new-folder.png" alt="File Explorer in Documents with the New menu open and Folder highlighted."><figcaption>Illustration: Windows File Explorer</figcaption></figure>
+<figure><img src="images/linux-new-folder.png" alt="The Linux Files app in Documents with the right-click menu open and New Folder highlighted."><figcaption>Illustration: Linux Files</figcaption></figure>
+<p>Then:</p>
+<ol>
+<li>Open the Claude app. Under the message box, click <strong>Cowork</strong> (next to <strong>Chat</strong>). If you don't see it, update the app and check that you're signed in to your Pro account.
+<figure><img src="images/cowork-switch.png" alt="The message box with the Chat and Cowork switch; Cowork is the right-hand option."></figure></li>
+<li>Connect your course folder: use the folder button near the message box, or choose it when Claude asks which folder to work in. Pick your <code>claude-class</code> folder. Never pick your whole home folder, Documents, or Desktop.</li>
+<li>Type a small test request, such as: <code>Make a file called hello.txt that says Hello from Cowork.</code></li>
+<li>The first time, you may see "Setting up Claude's workspace" for a minute. That's normal.</li>
+<li>When Claude says it's done, open your <code>claude-class</code> folder and check that <code>hello.txt</code> is there.
+<figure><img src="images/cowork-task-done.png" alt="A finished Cowork task: Created a file hello.txt, with hello.txt listed under Outputs on the right."></figure></li>
+</ol>
+<p>Cowork keeps working while you do other things, but it can only reach your folder while the Claude app is open. Leave the app open until a task is finished.</p>
+
+<h2>Sandbox your work</h2>
+<p>Cowork comes sandboxed: you don't install anything to get it. Each task runs in a temporary, sealed-off workspace on Anthropic's servers that is erased when the session ends. Your job is to keep a few settings tight so Claude only touches what you meant it to.</p>
+<div class="table-wrap"><table>
+<caption>Cowork's protections and who controls each one</caption>
+<tr><th scope="col">Protection</th><th scope="col">What it does</th><th scope="col">Who controls it</th></tr>
+<tr><td>Cloud sandbox</td><td>Claude's commands run in an isolated, temporary workspace, not on your computer</td><td>Always on</td></tr>
+<tr><td>Folder access</td><td>Claude reads and writes only the folders you connect</td><td>You, when you connect a folder</td></tr>
+<tr><td>Delete protection</td><td>Claude must ask before permanently deleting any file, in every mode</td><td>Always on</td></tr>
+<tr><td>Approval mode</td><td>Decides whether Claude asks before each action</td><td>You, in the mode menu under the message box</td></tr>
+<tr><td>Network limits</td><td>Everything leaving the sandbox goes through a filter; only allowed sites are reachable</td><td>Your <a href="https://claude.ai/settings/capabilities">Claude capabilities settings</a> (on Team or Enterprise plans, your administrator)</td></tr>
+</table></div>
+<p>Set these up once:</p>
+<ol>
+<li><strong>Approval mode: choose Manually approve while you're learning.</strong> Click the mode button under the message box (it shows the current mode, such as <strong>Manual</strong> or <strong>Auto</strong>) and pick <strong>Manually approve</strong>, so Claude asks before it acts. Pro, Max, and Team plans start on <strong>Automatically approve</strong>. Never choose <strong>Skip all approvals</strong>.
+<figure><img src="images/cowork-mode-menu.png" alt="The mode menu under the message box: Manually approve (checked), Automatically approve, Skip all approvals."></figure></li>
+<li><strong>Folders: connect only <code>claude-class</code>.</strong> If you connected anything bigger by mistake, remove it and connect the course folder instead.</li>
+<li><strong>Computer use: leave it off.</strong> This beta feature lets Claude click and type on your screen, and it skips the permission checks that protect everything else.</li>
+<li><strong>Deleting: read before you click Allow.</strong> When Claude asks to delete a file, check the file name. Click <strong>Allow</strong> only if you meant it.</li>
+<li><strong>Network: keep internet access narrow.</strong> On the capabilities settings page, don't widen Claude's internet access unless the instructor asks you to. A change applies only to conversations you start afterward.</li>
+</ol>
+<p>Things to know:</p>
+<ul>
+<li>Connectors and Claude's web search aren't limited by the network setting. Add only the connectors the course needs.</li>
+<li>Deleting a task removes it from your history right away; Anthropic erases it from its systems within 30 days.</li>
+<li>Long, multi-step tasks use more of your plan's usage than a quick question.</li>
+</ul>
+
+<h2>Connect to GitHub</h2>
+<p>Cowork writes files into your <code>claude-class</code> folder; a second app uploads them to GitHub. Anthropic doesn't document a way for Cowork to save to GitHub on its own, so you stay in charge of every upload.</p>
+<div class="table-wrap"><table>
+<caption>How each system uploads files to GitHub</caption>
+<tr><th scope="col">System</th><th scope="col">Upload to GitHub with</th></tr>
+<tr><td>macOS, Windows</td><td>GitHub Desktop, a free app (steps below)</td></tr>
+<tr><td>Linux, Chromebook</td><td>The github.com website (steps below)</td></tr>
+</table></div>
+
+<h3>macOS and Windows: GitHub Desktop</h3>
+<ol>
+<li>Download GitHub Desktop from the <a href="https://desktop.github.com">GitHub Desktop download page</a>, install it, and open it.
+<figure><img src="images/ghd-download.png" alt="The GitHub Desktop download page with a green Download for Windows button."><figcaption>On a Mac, the same button offers the Mac download.</figcaption></figure></li>
+<li>Click <strong>Sign in to GitHub.com</strong>, log in in the browser window that opens, and click <strong>Authorize</strong>. Back in GitHub Desktop, accept the suggested name and email.</li>
+<li>Choose <strong>File &gt; Add local repository</strong>, click <strong>Choose…</strong>, and pick your <code>claude-class</code> folder. GitHub Desktop says the folder isn't a repository yet: click <strong>create a repository</strong>, then <strong>Create repository</strong>.</li>
+<li>Click <strong>Publish repository</strong>. Uncheck <strong>Keep this code private</strong> if you'll publish a website from it (see the practice exercise), then click <strong>Publish repository</strong> again.</li>
+<li>From now on, after Cowork changes files, open GitHub Desktop. Your changed files appear on the <strong>Changes</strong> tab. Type a short note in the <strong>Summary</strong> box at the bottom left, click <strong>Commit to main</strong>, then click <strong>Push origin</strong> at the top.
+<figure><img src="images/ghd-main.png" alt="GitHub Desktop with claude-class open: Changes tab, Summary (required) box, and Commit to main button."></figure></li>
+</ol>
+
+<h3>Linux and Chromebook: the github.com website</h3>
+<ol>
+<li>Sign in at <a href="https://github.com">github.com</a>, click <strong>+</strong> at the top right, and choose <strong>New repository</strong>.
+<figure><img src="images/gh-plus.png" alt="The + menu at the top right of github.com, with New repository second in the list."></figure></li>
+<li>Type <code>claude-class</code> under <strong>Repository name</strong>. Set <strong>Choose visibility</strong> to <strong>Public</strong>, switch <strong>Add README</strong> to <strong>On</strong>, and click <strong>Create repository</strong>.
+<figure><img src="images/gh-new-repo.png" alt="The new repository form: name claude-class, visibility Public, Add README On, Create repository button."></figure></li>
+<li>Click <strong>Add file &gt; Upload files</strong>, drag in the files Claude made (Chromebook: the files you downloaded from Cowork), and click <strong>Commit changes</strong>.
+<figure><img src="images/gh-add-file.png" alt="The Add file menu on a repository page, with Create new file and Upload files."></figure>
+<figure><img src="images/gh-upload.png" alt="The upload page: Drag files here to add them to your repository, and a green Commit changes button."></figure></li>
+</ol>
+<p>To replace a file later, upload the new version with the same name; GitHub keeps the old version in its history.</p>
+<p>Claude can also <em>read</em> a GitHub repository: in a chat, click <strong>+</strong> and choose <strong>Add from GitHub</strong>. This copies the files in for Claude to look at, but Claude can't save changes back that way.</p>
+
+<h2>Practice exercise: publish a one-page website</h2>
+<p>This short exercise confirms every piece works: Cowork makes a web page in your course folder, you upload it to GitHub, and GitHub publishes it at a public address. It takes about 15 minutes.</p>
+<ol>
+<li>Open Claude, start a Cowork task, and make sure your <code>claude-class</code> folder is connected.</li>
+<li><p>Type this request:</p>
+<pre><code>In my claude-class folder, make a one-page website in a file called index.html. Put my name at the top, a short paragraph about a book I am reading this semester, and a list of three questions I have about it. Keep it to one file with the styling inside it.</code></pre></li>
+<li>If Claude asks permission before writing the file, read the request and approve it. (It may simply make the file; either is fine.)</li>
+<li>Open your <code>claude-class</code> folder and double-click <code>index.html</code>. It opens in your browser. Ask Claude for any changes you want.</li>
+<li>Upload it to GitHub (see Connect to GitHub): in GitHub Desktop, commit and push; on Linux or a Chromebook, upload <code>index.html</code> on github.com.</li>
+<li>On github.com, open your <code>claude-class</code> repository and click <strong>Settings</strong>, then <strong>Pages</strong> in the left menu.</li>
+<li>Under <strong>Build and deployment</strong>, set <strong>Source</strong> to <strong>Deploy from a branch</strong>, choose <strong>main</strong> and <strong>/ (root)</strong>, and click <strong>Save</strong>.</li>
+<li>Wait one or two minutes, then refresh the Pages screen. It shows your site's address, <code>https://YOUR-USERNAME.github.io/claude-class/</code>. Open it.
+<figure><img src="images/gh-pages.png" alt="GitHub Pages settings: Your site is live, Source Deploy from a branch, branch main and / (root)."></figure></li>
+</ol>
+<p>When you are done, check off:</p>
+<ul class="checklist">
+<li>Claude Desktop is installed and signed in (Chromebook: claude.ai works)</li>
+<li>Cowork made <code>index.html</code> in your <code>claude-class</code> folder</li>
+<li>Approval mode is <strong>Manually approve</strong> and only <code>claude-class</code> is connected</li>
+<li>The file is in your GitHub repository</li>
+<li>Your site opens at its github.io address</li>
+<li>You sent the instructor the link</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+<div class="table-wrap"><table>
+<caption>Common problems, their likely causes, and fixes</caption>
+<tr><th scope="col">You see</th><th scope="col">Likely cause</th><th scope="col">Fix</th></tr>
+<tr><td>No <strong>Cowork</strong> option under the message box</td><td>The app is out of date, or you're signed in to a free account</td><td>Update the app and restart it; check that you're signed in to your Claude Pro account</td></tr>
+<tr><td>"Setting up Claude's workspace"</td><td>First run</td><td>Wait a minute; this is normal</td></tr>
+<tr><td>Claude stopped partway through a task</td><td>The Claude app was closed, so Cowork lost your folder</td><td>Reopen the app and leave it open until the task is done</td></tr>
+<tr><td>Files aren't where you expected</td><td>The wrong folder was connected</td><td>Check which folder is connected and where Claude says it saved the file</td></tr>
+<tr><td>Claude can't open a file you need</td><td>The file is outside <code>claude-class</code></td><td>Copy it into <code>claude-class</code>; don't connect a bigger folder</td></tr>
+<tr><td>Linux: "virtualization isn't available"</td><td>KVM is turned off on this computer</td><td>Ask the instructor; you can use Cowork at claude.ai in the browser meanwhile</td></tr>
+<tr><td>GitHub Desktop shows no changes</td><td>Wrong folder added, or Cowork hasn't saved yet</td><td>Check that GitHub Desktop's <strong>Current repository</strong> is <code>claude-class</code></td></tr>
+<tr><td>The github.io address shows "404"</td><td>Pages isn't on yet, or <code>index.html</code> isn't in the top level of the repository</td><td>Wait two minutes and refresh; check the Pages settings in step 7 of the exercise</td></tr>
+<tr><td>You hit your usage limit</td><td>Long tasks use more of your plan</td><td>Wait for the limit to reset, or break the task into smaller steps</td></tr>
+</table></div>
+
+<h2>Sources</h2>
+<p>All Anthropic pages checked November 9, 2026.</p>
+<ul>
+<li><a href="https://support.claude.com/en/articles/13345190-getting-started-with-cowork">Getting started with Cowork</a> (plans)</li>
+<li><a href="https://support.claude.com/en/articles/10065433-installing-claude-desktop">Installing Claude Desktop</a> (system requirements, Linux install commands and limits)</li>
+<li><a href="https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile">Use Cowork on web, desktop, and mobile</a> (cloud sessions, local folder access)</li>
+<li><a href="https://support.claude.com/en/articles/13364135-using-cowork-safely">Using Cowork safely</a> (sandbox, delete protection, approval modes, network)</li>
+<li><a href="https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview">Cowork architecture overview</a> (sandbox and network proxy)</li>
+<li><a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities">Use connectors</a> and <a href="https://support.claude.com/en/articles/10167454-use-the-github-integration">Use the GitHub integration</a> (GitHub is read-only in Claude)</li>
+<li><a href="https://claude.com/download">Claude downloads</a></li>
+<li><a href="https://desktop.github.com">GitHub Desktop</a> and <a href="https://docs.github.com/en/pages">GitHub Pages documentation</a> (github.com screens and GitHub Desktop's main window checked November 9, 2026; GitHub Desktop's sign-in, Add local repository, and Publish screens not re-checked)</li>
+</ul>
+
+</main>
+</body>
+</html>
